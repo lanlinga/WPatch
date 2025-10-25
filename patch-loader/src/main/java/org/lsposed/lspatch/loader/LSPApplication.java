@@ -1,7 +1,7 @@
-package org.lsposed.lspatch.loader;
+package org.IamWan.Zpatch.loader;
 
-import static org.lsposed.lspatch.share.Constants.CONFIG_ASSET_PATH;
-import static org.lsposed.lspatch.share.Constants.ORIGINAL_APK_ASSET_PATH;
+import static org.IamWan.Zpatch.share.Constants.CONFIG_ASSET_PATH;
+import static org.IamWan.Zpatch.share.Constants.ORIGINAL_APK_ASSET_PATH;
 
 import android.app.ActivityThread;
 import android.app.LoadedApk;
@@ -13,10 +13,10 @@ import android.os.RemoteException;
 import android.system.Os;
 import android.util.Log;
 
-import org.lsposed.lspatch.loader.util.FileUtils;
-import org.lsposed.lspatch.loader.util.XLog;
-import org.lsposed.lspatch.service.LocalApplicationService;
-import org.lsposed.lspatch.service.RemoteApplicationService;
+import org.IamWan.Zpatch.loader.util.FileUtils;
+import org.IamWan.Zpatch.loader.util.XLog;
+import org.IamWan.Zpatch.service.LocalApplicationService;
+import org.IamWan.Zpatch.service.RemoteApplicationService;
 import org.lsposed.lspd.core.Startup;
 import org.lsposed.lspd.service.ILSPApplicationService;
 import org.json.JSONObject;
@@ -49,7 +49,7 @@ import hidden.HiddenApiBridge;
 @SuppressWarnings("unused")
 public class LSPApplication {
 
-    private static final String TAG = "LSPatch";
+    private static final String TAG = "ZPatch";
     private static final int FIRST_APP_ZYGOTE_ISOLATED_UID = 90000;
     private static final int PER_USER_RANGE = 100000;
 
