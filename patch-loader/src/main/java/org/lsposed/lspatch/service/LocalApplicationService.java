@@ -1,4 +1,4 @@
-package org.lsposed.lspatch.service;
+package org.IamWan.Zpatch.service;
 
 import android.content.Context;
 import android.os.Environment;
@@ -7,9 +7,9 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.util.Log;
 
-import org.lsposed.lspatch.loader.util.FileUtils;
-import org.lsposed.lspatch.share.Constants;
-import org.lsposed.lspatch.util.ModuleLoader;
+import org.IamWan.Zpatch.loader.util.FileUtils;
+import org.IamWan.Zpatch.share.Constants;
+import org.IamWan.Zpatch.util.ModuleLoader;
 import org.lsposed.lspd.models.Module;
 import org.lsposed.lspd.service.ILSPApplicationService;
 
@@ -29,9 +29,9 @@ public class LocalApplicationService extends ILSPApplicationService.Stub {
 
     public LocalApplicationService(Context context) {
         try {
-            for (var name : context.getAssets().list("lspatch/modules")) {
+            for (var name : context.getAssets().list("zpatch/modules")) {
                 String packageName = name.substring(0, name.length() - 4);
-                String modulePath = context.getCacheDir() + "/lspatch/" + packageName + "/";
+                String modulePath = context.getCacheDir() + "/zpatch/" + packageName + "/";
                 String cacheApkPath;
                 try (ZipFile sourceFile = new ZipFile(context.getPackageResourcePath())) {
                     cacheApkPath = modulePath + sourceFile.getEntry(Constants.EMBEDDED_MODULES_ASSET_PATH + name).getCrc() + ".apk";
@@ -41,7 +41,7 @@ public class LocalApplicationService extends ILSPApplicationService.Stub {
                     Log.i(TAG, "Extract module apk: " + packageName);
                     FileUtils.deleteFolderIfExists(Paths.get(modulePath));
                     Files.createDirectories(Paths.get(modulePath));
-                    try (var is = context.getAssets().open("lspatch/modules/" + name)) {
+                    try (var is = context.getAssets().open("zpatch/modules/" + name)) {
                         Files.copy(is, Paths.get(cacheApkPath));
                     }
                 }
