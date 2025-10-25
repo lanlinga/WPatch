@@ -1,6 +1,6 @@
-package org.lsposed.lspatch.loader;
+package org.IamWan.Zpatch.loader;
 
-import static org.lsposed.lspatch.share.Constants.ORIGINAL_APK_ASSET_PATH;
+import static org.IamWan.Zpatch.share.Constants.ORIGINAL_APK_ASSET_PATH;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -14,8 +14,8 @@ import android.util.Log;
 
 import com.google.gson.JsonSyntaxException;
 
-import org.lsposed.lspatch.loader.util.XLog;
-import org.lsposed.lspatch.share.Constants;
+import org.IamWan.Zpatch.loader.util.XLog;
+import org.IamWan.Zpatch.share.Constants;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,7 +31,7 @@ import de.robv.android.xposed.XposedHelpers;
 
 public class SigBypass {
 
-    private static final String TAG = "LSPatch-SigBypass";
+    private static final String TAG = "ZPatch-SigBypass";
     private static final Map<String, String> signatures = new HashMap<>();
 
     private static void replaceSignature(Context context, PackageInfo packageInfo) {
@@ -124,7 +124,7 @@ public class SigBypass {
         if (sigBypassLevel >= Constants.SIGBYPASS_LV_PM_OPENAT) {
             String cacheApkPath;
             try (ZipFile sourceFile = new ZipFile(context.getPackageResourcePath())) {
-                cacheApkPath = context.getCacheDir() + "/lspatch/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
+                cacheApkPath = context.getCacheDir() + "/zpatch/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
             }
             org.lsposed.lspd.nativebridge.SigBypass.enableOpenatHook(context.getPackageResourcePath(), cacheApkPath);
         }
