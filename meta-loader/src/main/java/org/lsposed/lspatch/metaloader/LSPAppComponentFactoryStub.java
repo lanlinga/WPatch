@@ -37,7 +37,7 @@ public class LSPAppComponentFactoryStub extends AppComponentFactory {
     static {
         final boolean appZygote = ActivityThread.currentActivityThread() == null;
         if (appZygote) {
-            Log.i(TAG, "Skip loading liblspatch.so for appZygote");
+            Log.i(TAG, "Skip loading libzpatch.so for appZygote");
         } else {
             bootstrap();
         }
