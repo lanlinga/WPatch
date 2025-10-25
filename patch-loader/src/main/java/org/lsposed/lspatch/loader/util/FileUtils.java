@@ -1,4 +1,4 @@
-package org.lsposed.lspatch.loader.util;
+package org.IamWan.Zpatch.loader.util;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
