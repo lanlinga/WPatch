@@ -1,4 +1,4 @@
-package org.lsposed.lspatch.service;
+package org.IamWan.Zpatch.service;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
@@ -16,7 +16,7 @@ import android.os.UserHandle;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.lsposed.lspatch.share.Constants;
+import org.IamWan.Zpatch.share.Constants;
 import org.lsposed.lspd.models.Module;
 import org.lsposed.lspd.service.ILSPApplicationService;
 
@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 
 public class RemoteApplicationService implements ILSPApplicationService {
 
-    private static final String TAG = "LSPatch";
+    private static final String TAG = "ZPatch";
     private static final String MODULE_SERVICE = Constants.MANAGER_PACKAGE_NAME + ".manager.ModuleService";
 
     private volatile ILSPApplicationService service;
